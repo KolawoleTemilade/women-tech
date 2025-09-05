@@ -14,14 +14,13 @@ console.log (multiplication)
 let division = (num1 / num2);
 console.log (division)
 
-let result = (num1 + num2)
-console.log (result)
+let result = ()
 
 //template literal
-let message = `Hello ${name}, the result of num1 + num2 is  ${result} `
+let message = `Hello ${name}, the result of num1 + num2 is  ${addition} `
 console.log (message)
 
 
 //concatination
-let message1 = "Hello "+ name + ", the reult of num1 + num 2 is " + result
+let message1 = "Hello "+ name + ", the reult of num1 + num 2 is " + addition
 console.log (message1)

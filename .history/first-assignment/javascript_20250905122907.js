@@ -23,5 +23,5 @@ console.log (message)
 
 
 //concatination
-let message1 = "Hello "+ name + ", the reult of num1 + num 2 is " + result
+let message1 = "Hello "+ name + ", the reult of num1 + num 2 is " + addition
 console.log (message1)
