@@ -179,7 +179,4 @@ if (account4.balance > 0){
 
 
 console.log ("final balances")
-console.log (`${account1.name} new balance is ${account1.currency} ${account1.balance}`)
-console.log (`${account2.name} new balance is ${account2.currency} ${account2.balance}`)
-console.log (`${account3.name} new balance is ${account3.currency} ${account3.balance}`)
-console.log (`${account4.name} new balance is ${account4.currency} ${account4.balance}`)
+console.log (`${account.}`)
