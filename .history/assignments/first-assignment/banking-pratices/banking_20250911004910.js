@@ -210,7 +210,6 @@ console.log("")
 
 
 // status check
-console.log("***Status Check***")
 if (account1.balance > 0) {
     console.log("account is active")
 } else if (account1.balance === 0) {

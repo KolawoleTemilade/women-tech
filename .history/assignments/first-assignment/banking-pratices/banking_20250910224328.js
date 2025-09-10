@@ -49,14 +49,12 @@ console.log(" ")
 console.log("***simulating withdrawals***")
 
 if (account1.balance >= withdawal) {
-    console.log("withdrawal successful...")
     console.log(`${account1.name} has been debited and balance remains ${account1.balance - withdawal}`)
 } else {
     console.log(`withdrawal denied for ${account1.name}: insufficient funds`)
 }
 
 if (account3.balance > withdawal) {
-    console.log("withdrawal successful...")
     console.log(`${account3.name} has been debited and balance remains ${account3.balance -= withdawal}`)
 } else {
     console.log(`withdrawal denied for ${account3.name}: insufficient funds`)
@@ -65,10 +63,9 @@ console.log(" ")
 
 // transferring between same currency accounts
 
-console.log("***transfering between same accounts***")
+console.log("***transfering between same accounts*")
 
-if (account1.currency == account2.currency) {
-    console.log("transfer successful...")
+if (account1.currency === account2.currency) {
     console.log(`${account2.name}'s account credited with ${account2.balance += deposit} &`);
 
     console.log(`${account1.name} just got debited and balance remains ${account1.balance -= deposit}`);
@@ -76,12 +73,8 @@ if (account1.currency == account2.currency) {
     console.log("Transfer failed: currency mismatch")
 }
 
-console.log("")
-
 // transferring between diff currency accounts
-console.log("***transferring between different accounts***")
 if (account2.currency === account3.currency) {
-    console.log("transfer successful...")
     console.log(`${account3.name}'s account credited with ${account3.balance += deposit} &`);
 
     console.log(`${account2.name} just got debited and balance remains ${account2.balance -= deposit}`);
@@ -89,128 +82,63 @@ if (account2.currency === account3.currency) {
     console.log("Transfer failed: currency mismatch")
 }
 
-console.log("")
-
 // monthly maintenance
 let rate = 0.05  //5%
-// let time = 1 //1 year
-
-// since others are not using year, ill be commenting out the year and removing it from the rest of the code
+let time = 1 //1 year
 
 let fees = 20
 
-console.log("***monthly maintenance with savings and checkings***")
-
 if (account1.type === "savings") {
-    let interest = account1.balance * rate 
-    console.log(`interest gained is${account1.currency + " " + interest}`)
+    let interest = account1.balance * rate * time
+    console.log(`interest balance in a year is ${account1.currency + " " + interest}`)
     console.log(`the new balance for ${account1.name} with interest is now ${account1.balance + interest}`)
 } else {
-    console.log("fees deducted")
     console.log(`new balance for ${account1.name} with checking fee is now ${account1.balance - fees}`)
 }
 
 
 if (account2.type === "savings") {
-    let interest = account1.balance * rate 
-    console.log(`interest gained is ${account2.currency + " " + interest}`)
+    let interest = account1.balance * rate * time
+    console.log(`interest balance in a year is ${account2.currency + " " + interest}`)
     console.log(`the new balance for ${account2.name} with interest is now ${account2.balance + interest}`)
 } else {
-    console.log("fees deducted..")
+
     console.log(`new balance for ${account2.name} with checking is now ${account2.balance - fees}`)
 };
 
 if (account3.type === "savings") {
-    let interest = account1.balance * rate 
-    console.log(`interest gained is ${account3.currency + " " + interest}`)
+    let interest = account1.balance * rate * time
+    console.log(`interest balance in a year is ${account3.currency + " " + interest}`)
     console.log(`the new balance for ${account3.name} with interest is now ${account3.balance + interest}`)
 }
 else {
-    console.log("fees deducted..")
     console.log(`new balance for ${account3.name} with checking is now ${account3.balance - fees}`)
 };
 
 if (account4.type === "savings") {
-    let interest = account1.balance * rate 
-    console.log(`interest gained is ${account4.currency + " " + interest}`)
+    let interest = account1.balance * rate * time
+    console.log(`interest balance in a year is ${account4.currency + " " + interest}`)
     console.log(`the new balance for ${account4.name} with interest is now ${account4.balance + interest}`)
 } else {
-    console.log("fees deducted..")
     console.log(`new balance for ${account4.name} with checking is now ${account4.balance - fees}`)
 }
-
-console.log("")
-//  for comparrison, i have to convert everthing to a single currency.. going for naira in this case.
-console.log("***comparison between accounts***")
-console.log("")
-
-let exchangeRate = 1500; 
-
-let account1NGN = account1.currency === "NGN" ? account1.balance : account1.balance * exchangeRate;
-let account2NGN = account2.currency === "NGN" ? account2.balance : account2.balance * exchangeRate;
-let account3NGN = account3.currency === "NGN" ? account3.balance : account3.balance * exchangeRate;
-let account4NGN = account4.currency === "NGN" ? account4.balance : account4.balance * exchangeRate;
-
-
-
-console.log("balances before conversion" , account1.balance, account2.balance, account3.balance, account4.balance)
-
-console.log("balances after conversion", account1NGN, account2NGN, account3NGN, account4NGN);
-
-console.log("")
-
-let highest = {
-    name: account1.name, 
-    value: account1NGN, 
-}
-let lowest = {
-    name: account1.name, 
-    value: account1NGN, 
-};
-
-let account2New = {
-    name: account2.name,
-    value : account2NGN                
-};
-let account3New = {
-    name: account3.name,
-    value : account3NGN                
-};
-let account4New = {
-    name: account4.name,
-    value : account4NGN                
-};
-
-
-
-
-if (account2NGN > highest.value)
-{
-    highest = account2New
-}else if (account2NGN < lowest.value) {
-    lowest = account2New
-};
-
-if (account3NGN > highest.value)
-{
-    highest = account3New
-}else if (account3NGN < lowest.value) {
-    lowest = account3New
-};
-
-if (account4NGN > highest.value)
-{
-    highest = account4New
-}else if (account4NGN < lowest.value) {
-    lowest = account4New
-}
-console.log("the highest is "  + " with " + highest.name  + "" + highest.value)
-console.log("the lowest is " + " with " + lowest.name + " " + lowest.value)
-console.log("")
-
-
+//  comparisons with highest balance  by tomorrow check for the currency differences
+if (account1.balance > account2.balance) {
+    console.log(`${account1.name} has more money than ${account2.name}`)
+} else (
+    console.log(`${account2.name} has higher money `)
+)
+if (account2.balance > account3.balance) {
+    console.log(`${account2.name} has more money than ${account3.name}`)
+} else (
+    console.log(`${account3.name} has higher money `)
+)
+if (account3.balance > account4.balance) {
+    console.log(`${account3.name} has more money than ${account4.name}`)
+} else (
+    console.log(`${account4.name} has higher money `)
+)
 // status check
-console.log("***Status Check***")
 if (account1.balance > 0) {
     console.log("account is active")
 } else if (account1.balance === 0) {
@@ -252,10 +180,10 @@ if (account4.balance > 0) {
 } else {
     console.log("")
 }
-console.log("")
 
-console.log("***final balances***")
-console.log(`${account1.name} new balance is ${account1.currency} ${account1.balance} & NGN${account1NGN}`)
-console.log(`${account2.name} new balance is ${account2.currency} ${account2.balance} & NGN${account2NGN}`)
-console.log(`${account3.name} new balance is ${account3.currency} ${account3.balance} & NGN${account3NGN}`)
-console.log(`${account4.name} new balance is ${account4.currency} ${account4.balance} & NGN${account4NGN}`)
+
+console.log("final balances")
+console.log(`${account1.name} new balance is ${account1.currency} ${account1.balance}`)
+console.log(`${account2.name} new balance is ${account2.currency} ${account2.balance}`)
+console.log(`${account3.name} new balance is ${account3.currency} ${account3.balance}`)
+console.log(`${account4.name} new balance is ${account4.currency} ${account4.balance}`)

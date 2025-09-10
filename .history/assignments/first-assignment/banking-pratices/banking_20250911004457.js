@@ -151,12 +151,8 @@ let account2NGN = account2.currency === "NGN" ? account2.balance : account2.bala
 let account3NGN = account3.currency === "NGN" ? account3.balance : account3.balance * exchangeRate;
 let account4NGN = account4.currency === "NGN" ? account4.balance : account4.balance * exchangeRate;
 
-
-
-console.log("balances before conversion" , account1.balance, account2.balance, account3.balance, account4.balance)
-
+console.log("")
 console.log("balances after conversion", account1NGN, account2NGN, account3NGN, account4NGN);
-
 console.log("")
 
 let highest = {
@@ -210,7 +206,6 @@ console.log("")
 
 
 // status check
-console.log("***Status Check***")
 if (account1.balance > 0) {
     console.log("account is active")
 } else if (account1.balance === 0) {
@@ -254,8 +249,8 @@ if (account4.balance > 0) {
 }
 console.log("")
 
-console.log("***final balances***")
-console.log(`${account1.name} new balance is ${account1.currency} ${account1.balance} & NGN${account1NGN}`)
-console.log(`${account2.name} new balance is ${account2.currency} ${account2.balance} & NGN${account2NGN}`)
-console.log(`${account3.name} new balance is ${account3.currency} ${account3.balance} & NGN${account3NGN}`)
-console.log(`${account4.name} new balance is ${account4.currency} ${account4.balance} & NGN${account4NGN}`)
+console.log("final balances")
+console.log(`${account1.name} new balance is ${account1.currency} ${account1.balance}`)
+console.log(`${account2.name} new balance is ${account2.currency} ${account2.balance}`)
+console.log(`${account3.name} new balance is ${account3.currency} ${account3.balance}`)
+console.log(`${account4.name} new balance is ${account4.currency} ${account4.balance}`)

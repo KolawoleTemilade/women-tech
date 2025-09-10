@@ -142,8 +142,7 @@ if (account4.type === "savings") {
 console.log("")
 //  for comparrison, i have to convert everthing to a single currency.. going for naira in this case.
 console.log("***comparison between accounts***")
-console.log("")
-
+console.log("balances before conversion" , account1.balance, account2.balance, account3.balance, account4.balance)
 let exchangeRate = 1500; 
 
 let account1NGN = account1.currency === "NGN" ? account1.balance : account1.balance * exchangeRate;
@@ -152,12 +151,7 @@ let account3NGN = account3.currency === "NGN" ? account3.balance : account3.bala
 let account4NGN = account4.currency === "NGN" ? account4.balance : account4.balance * exchangeRate;
 
 
-
-console.log("balances before conversion" , account1.balance, account2.balance, account3.balance, account4.balance)
-
 console.log("balances after conversion", account1NGN, account2NGN, account3NGN, account4NGN);
-
-console.log("")
 
 let highest = {
     name: account1.name, 
@@ -168,49 +162,55 @@ let lowest = {
     value: account1NGN, 
 };
 
-let account2New = {
+account2 = {
     name: account2.name,
     value : account2NGN                
 };
-let account3New = {
+account3 = {
     name: account3.name,
     value : account3NGN                
 };
-let account4New = {
+account4 = {
     name: account4.name,
     value : account4NGN                
-};
+}
 
 
 
 
 if (account2NGN > highest.value)
 {
-    highest = account2New
-}else if (account2NGN < lowest.value) {
-    lowest = account2New
-};
-
+    highest = account2NGN
+}
 if (account3NGN > highest.value)
 {
-    highest = account3New
-}else if (account3NGN < lowest.value) {
-    lowest = account3New
-};
-
+    highest = account3NGN
+}
 if (account4NGN > highest.value)
 {
-    highest = account4New
-}else if (account4NGN < lowest.value) {
-    lowest = account4New
+    highest = account4NGN
 }
-console.log("the highest is "  + " with " + highest.name  + "" + highest.value)
-console.log("the lowest is " + " with " + lowest.name + " " + lowest.value)
-console.log("")
+console.log("the highest is"  + "with " + "" + highest.value)
+
+
+// if (account1NGN > account2NGN) {
+//     console.log(`${account1.name} has more money than ${account2.name}`)
+// } else (
+//     console.log(`${account2.name} has higher money `)
+// )
+// if (account2.balance > account3.balance) {
+//     console.log(`${account2.name} has more money than ${account3.name}`)
+// } else (
+//     console.log(`${account3.name} has higher money `)
+// )
+// if (account3.balance > account4.balance) {
+//     console.log(`${account3.name} has more money than ${account4.name}`)
+// } else (
+//     console.log(`${account4.name} has higher money `)
+// ) 
 
 
 // status check
-console.log("***Status Check***")
 if (account1.balance > 0) {
     console.log("account is active")
 } else if (account1.balance === 0) {
@@ -254,8 +254,8 @@ if (account4.balance > 0) {
 }
 console.log("")
 
-console.log("***final balances***")
-console.log(`${account1.name} new balance is ${account1.currency} ${account1.balance} & NGN${account1NGN}`)
-console.log(`${account2.name} new balance is ${account2.currency} ${account2.balance} & NGN${account2NGN}`)
-console.log(`${account3.name} new balance is ${account3.currency} ${account3.balance} & NGN${account3NGN}`)
-console.log(`${account4.name} new balance is ${account4.currency} ${account4.balance} & NGN${account4NGN}`)
+console.log("final balances")
+console.log(`${account1.name} new balance is ${account1.currency} ${account1.balance}`)
+console.log(`${account2.name} new balance is ${account2.currency} ${account2.balance}`)
+console.log(`${account3.name} new balance is ${account3.currency} ${account3.balance}`)
+console.log(`${account4.name} new balance is ${account4.currency} ${account4.balance}`)

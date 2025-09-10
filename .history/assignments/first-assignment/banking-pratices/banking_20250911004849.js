@@ -155,6 +155,8 @@ let account4NGN = account4.currency === "NGN" ? account4.balance : account4.bala
 
 console.log("balances before conversion" , account1.balance, account2.balance, account3.balance, account4.balance)
 
+console.log("")
+
 console.log("balances after conversion", account1NGN, account2NGN, account3NGN, account4NGN);
 
 console.log("")
@@ -210,7 +212,6 @@ console.log("")
 
 
 // status check
-console.log("***Status Check***")
 if (account1.balance > 0) {
     console.log("account is active")
 } else if (account1.balance === 0) {
