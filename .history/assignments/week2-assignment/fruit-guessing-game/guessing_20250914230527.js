@@ -1,0 +1,20 @@
+const baskets = [
+    {name: "Basket1", hasFruit: false},
+    {name: "Basket2", hasFruit: true},
+    {name: "Basket3", hasFruit: false},
+]
+
+let fruitFound = true
+
+function checkBasket(basketNumber) {
+    let basket = baskets[basketNumber-1]
+
+if (basket.hasFruit){
+    console.log(basket.name + " " + "has fruits")
+    fruitFound = false
+}else {
+console.log(basket.name + " " + "does not have fruit")
+}
+}
+
+checkBasket(1);
