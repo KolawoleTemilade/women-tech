@@ -5,11 +5,9 @@
 // 4. Use conditionals to check if an item already exists.
 
 // for 1, i am going to create an array of strings
-// for 2, i will be creating a function to help show the list while i loop through it so i dont have to repeat my self several times using the .length arrray methods
-
+// for 2, i will be creating a function to help show the list while i loop through it so i dont have to repeat my self several times.
 
 let items = ["bread", "sardine", "tissues", "butter", "chocolates"]
-console.log(items)
  
 // before adding or removing from the list, i want to show the list first using function
 
@@ -25,8 +23,8 @@ showList();
 // adding to the list
 // let newItem = ["coconut", "sugar", "milk"]
 function addList(newItem){
-// items[items.length] = newItem; // i can either add to my list this way or i can also .push it
-items.push(newItem);
+items[items.length] = newItem; // i can either add to my list this way or i can also .push it
+// items.push(newItem);
 console.log("just added" + " " + newItem)
 }
 addList("coconut")

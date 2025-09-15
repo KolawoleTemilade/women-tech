@@ -26,7 +26,7 @@ showList();
 // let newItem = ["coconut", "sugar", "milk"]
 function addList(newItem){
 // items[items.length] = newItem; // i can either add to my list this way or i can also .push it
-items.push(newItem);
+// items.push(newItem);
 console.log("just added" + " " + newItem)
 }
 addList("coconut")

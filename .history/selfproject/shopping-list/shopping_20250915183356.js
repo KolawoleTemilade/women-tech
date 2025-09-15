@@ -9,7 +9,6 @@
 
 
 let items = ["bread", "sardine", "tissues", "butter", "chocolates"]
-console.log(items)
  
 // before adding or removing from the list, i want to show the list first using function
 
@@ -20,13 +19,13 @@ function showList(){
         console.log((i + 1) + ". " + items[i]) //the i +1 is like saying 0+1 for numbering my items list
     }
 }
-showList();
+console.log (showList);
 
 // adding to the list
 // let newItem = ["coconut", "sugar", "milk"]
 function addList(newItem){
-// items[items.length] = newItem; // i can either add to my list this way or i can also .push it
-items.push(newItem);
+items[items.length] = newItem; // i can either add to my list this way or i can also .push it
+// items.push(newItem);
 console.log("just added" + " " + newItem)
 }
 addList("coconut")
