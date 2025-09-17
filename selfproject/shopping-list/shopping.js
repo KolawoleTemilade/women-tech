@@ -4,34 +4,38 @@
 // 3. Use a loop to go through all items.
 // 4. Use conditionals to check if an item already exists.
 
-// for 1, i am going to create an array of strings
-// for 2, i will be creating a function to help show the list while i loop through it so i dont have to repeat my self several times using the .length arrray methods
 
-
-let items = ["bread", "sardine", "tissues", "butter", "chocolates"]
-console.log(items)
- 
-// before adding or removing from the list, i want to show the list first using function
+let items = ["bread", "sardine", "tissues", "butter", "chocolates"] //using an array to store an item
+// let list = items 
 
 function showList(){
     console.log("the shopping list")
-    // lets loop through the list we want to show
-    for (i = 0; i < items.length; i++) { //the length is an array method that gets the list of all my items without me having to manually count my item
-        console.log((i + 1) + ". " + items[i]) //the i +1 is like saying 0+1 for numbering my items list
+      // lets loop through the list we want to show
+      for (i = 0; i < items.length; i++) { 
+        //   let list = items[i]
+        console.log((i + 1) + ". " + items[i])     
     }
 }
 showList();
+console.log("")
 
 // adding to the list
-// let newItem = ["coconut", "sugar", "milk"]
 function addList(newItem){
-// items[items.length] = newItem; // i can either add to my list this way or i can also .push it
-items.push(newItem);
+    if (items.includes(newItem)){ // this is a method to check if the item exist already
+        console.log(newItem + " " + "is already on the list")
+    } else{
+items.push(newItem);  //if the item doesnt exist, do this.
 console.log("just added" + " " + newItem)
-}
+}}
+addList("milk")
 addList("coconut")
 addList("sugar")
 addList("milk")
+addList("car")
+console.log("")
+
+showList()
+console.log("")
 
 
 // removing from the list
@@ -42,4 +46,9 @@ console.log(removed + " " + "just got removed")
 }
 
 removeItem()
-removeItem()
+console.log("")
+
+showList()
+console.log("")
+
+
