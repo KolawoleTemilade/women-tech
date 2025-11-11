@@ -1,6 +1,6 @@
 const answerDisplay = document.getElementById("answer");
 const figuresBox = document.getElementById("text-display")
-const backButton = document.querySelector(".back-btn")
+const backButton = document.getElementById("back-btn")
 const buttons = document.querySelectorAll("button")
 const operators = ["%", "/","*","-","+","="]
 let output = "";
