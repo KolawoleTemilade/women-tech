@@ -1,55 +1,35 @@
 const answerDisplay = document.getElementById("answer");
 const figuresBox = document.getElementById("text-display")
+const backButton = document.querySelector(".back-btn")
 const buttons = document.querySelectorAll("button")
+const operators = ["%", "/","*","-","+","="]
+let output = "";
 
-// initializing data i want to use like
-
-let currentvalue = "";
-let firstNumber = "";
-let operator = "";
-let secondNumber = ""; 
-
-// i want my button to be responsive to clicks, so i will loop through each button and make it listen to the event 
-
-buttons.forEach(button =>{
-    button.addEventListener("click", ()=>{
-        const value = button.textContent;
-        handleInput (value);
-    });
-});
-
-function handleInput (value){
-    console.log("i clicked", value)
-    if ('0123456789.'.includes(value)){
-        currentvalue += value
-        figuresBox.textContent = currentvalue;
+const calculate = (value) =>{
+    // console.log("i clicked ", value)
+    if (value === "=" && output !== ""){   // using this function method instead of the eval method
+        output = Function(`return (${output.replace("%", "/100")})`)();
+        // saving my anaswer in the answer box sheet
+        answerDisplay.textContent = output
+    }else if (value === "AC"){
+        output = "";
+        answerDisplay.textContent = output
+    }else {
+        if (output === "" && operators.includes(value)) return;
+        output += value
     }
-    else if (
-        ['+','-','*','/','%'].includes(value)
-        
-    ){
-         firstNumber = currentvalue
-         operator = value;
-         currentvalue = "";
-         figuresBox.textContent = `${firstNumber} ${operator} ${secondNumber} `
-          console.log('stored first number',firstNumber, 'and operator', operator), 'and second number:', secondNumber;
-    }else if(value === '='){
-           secondNumber = answerDisplay.textContent;
-
-           let result = ""
-           if (operator === '+') result = Number(firstNumber) + Number(secondNumber)
-           if (operator === '-') result = Number(firstNumber) - Number(secondNumber)
-           if (operator === '*') result = Number(firstNumber) * Number(secondNumber)
-           if (operator === '/') result = Number(firstNumber) / Number(secondNumber)
-           if (operator === '%') result = Number(firstNumber) % Number(secondNumber)
-            answerDisplay.textContent = result
-    } else if (value === 'AC'){
-        firstNumber = "";
-        operator = "";
-        secondNumber = "";
-        figuresBox.textContent = "";
-        answerDisplay.textContent = "";
-
-    }
+    figuresBox.textContent = output
 }
 
+
+// listening for button clicks
+
+buttons.forEach((button =>{
+    button.addEventListener("click", (e) => calculate(e.target.textContent))
+}))
+
+// heres an event listener for the back button
+backButton.addEventListener("click",()=>{
+    output = output.toString().slice(0, -1)
+    figuresBox.textContent = output;
+})

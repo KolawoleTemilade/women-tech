@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>calculator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- h-419,w-196  -->
-     <main>
-         <div id="answer"></div>
-         <div id="text-display"></div>
-        
-        <div class="digits">
-             <button class="first">AC</button>
-             <button class="first">+/-</button>
-             <button class="first">%</button>
-             <button  class="sec">
-            /
-             </button>
-             <button class="third">7</button>
-             <button class="third">9</button>
-             <button class="third">8</button>
-             <button class="sec">*</button>
-             <button class="third">4</button>
-             <button class="third">5</button>
-             <button class="third">6</button>
-             <button class=" sec">-</button>
-             <button class="third">1</button>
-             <button class="third">2</button>
-             <button class="third">3</button>
-             <button  class="sec">+</button>
-             <button  class="zero">0</button>
-             <button class="third">.</button>
-             <!-- <div class="button"></div> -->
-             <button class="sec">=</button>
-        
-    </div>
-     </main>
-     <script src="calculator.js" defer></script>
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="mic-sec">
+        <img src="./images/mic.svg" alt="mic-icon" class="mic" />
+      </div>
+      <div id="answer"></div>
+      <div class="display-sec">
+        <div id="text-display"></div>
+        <img src="./images/backbtn.svg" alt="back-btn" class="back-btn" />
+      </div>
+
+      <div class="digits">
+        <button class="first">AC</button>
+        <button class="first">+/-</button>
+        <button class="first">%</button>
+        <button class="sec">/</button>
+
+        <button class="third">7</button>
+        <button class="third">9</button>
+        <button class="third">8</button>
+        <button class="sec">*</button>
+
+        <button class="third">4</button>
+        <button class="third">5</button>
+        <button class="third">6</button>
+        <button class="sec">-</button>
+
+        <button class="third">1</button>
+        <button class="third">2</button>
+        <button class="third">3</button>
+        <button class="sec">+</button>
+
+        <button class="zero">0</button>
+        <button class="third">.</button>
+        <button class="sec">=</button>
+      </div>
+    </main>
+    <script src="calculator.js" defer></script>
+  </body>
 </html>
